@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#cml-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img alt="CallMyList" src="../../assets/images/logo-callmylist.png">
+            </a>
+        </div><!-- /.navbar-header -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="cml-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/home']">Dashboard</a></li>
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/campaigns']">My Campaigns</a></li>
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/sound']">Sounds</a></li>
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/contactlist']">Contact List</a></li>
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/account']">Account</a></li>
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/support']">Support</a></li>
+                <li [routerLinkActive]="['active']"><a [routerLink]="['/login']">Logout</a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav><!-- /.navbar -->
+

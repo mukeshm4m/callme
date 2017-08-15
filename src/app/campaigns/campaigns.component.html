@@ -1,0 +1,147 @@
+<div class="container pie-charts floater-holder">
+  <div class="row">
+    <div id="account-widget" class="floating-widget">
+      <h2 class="widget-title">My Account</h2>
+      <p>Balance: $30.00</p>
+      <p>
+        <a href="#">(3) Inbox</a><br>
+        <a href="#">Add Funds</a><br>
+        <a href="#">Support</a><br>
+        <a href="#">Logout</a>
+      </p>
+    </div>
+    <div class="col-xs-12 heading form-inline">
+      <!-- <div class="row"> -->
+      <!-- <div class="col-xs-6 col-sm-4"> -->
+      <select class="form-control" name="selectcampaign" id="selectcampaign">
+        <option value="-1">Select Campaign</option>
+        <option value="">Option 1</option>
+        <option value="">Option 2</option>
+        <option value="">Option 3</option>
+      </select>
+      <!-- </div> -->
+      <!-- </div> -->
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 svg-container">
+          <cml-donut-chart [charId]="'chart_listening_duration'" [title]="'Listening Duration'" [data]="data" [labels]="labels" [colors]="colors" [height]="400"></cml-donut-chart>
+      </div>
+      <div class="col-xs-12 col-sm-6 svg-container">
+        <div class="hidden-xs" style="height:80px;"></div>
+        <cml-donut-chart [charId]="'chart_detail'" [title]="'Detail'" [data]="data" [labels]="labels" [colors]="colors" ></cml-donut-chart>
+      </div>
+    </div>
+  </div>
+</div><!-- /.pie-charts -->
+
+<div class="container dashboard-widgets">
+  <div class="row">
+    <div class="col-md-8">
+      <h1 class="text-uppercase">My Campaigns</h1>
+      <p class="text-uppercase"><span class="text-lg"><strong>It’s simple.</strong></span> Simply select the campaigns you wish to control. Next select the appropriate command from the dropdown menu and click the “Go” button.</p>
+      <p>&nbsp;</p>
+      <form action="" role="form" class="form-inline">
+        <!-- <div class="row"> -->
+        <!-- <div class="col-xs-9 col-sm-4"> -->
+        <select class="form-control" name="selectcampaign" id="selectcampaign">
+          <option value="-1">Please select an option</option>
+          <option value="">Option 1</option>
+          <option value="">Option 2</option>
+          <option value="">Option 3</option>
+        </select>
+        <!-- </div> -->
+        <!-- <div class="col-xs-3"> -->
+        <button class="btn btn-primary btn-wide" type="button">Go</button>
+        <!-- </div> -->
+        <!-- </div> -->
+      </form>
+    </div>
+    <div class="col-xs-12 widget widget-mycampaigns">
+      <div class="row">
+        <div class="col-xs-12">
+
+          <label class="pull-right">
+            <p><a href="#">Off</a> Auto Update</p>
+          </label>
+
+        </div>
+      </div>
+      <div class="table-responsive form-inline">
+        <table class="table table-condensed table-hover table-striped">
+          <thead>
+          <tr>
+            <th class="table-nobg" width="1%"></th>
+            <th class="table-nobg" width="1%"></th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th class="text-center">Total</th>
+            <th class="text-center">Dialled</th>
+            <th class="text-center">Live</th>
+            <th class="text-center">Voicemail</th>
+            <th class="text-center">No Ans</th>
+            <th class="text-center">DNC</th>
+            <th class="text-center">Busy</th>
+            <th class="text-center">Transfer</th>
+            <th class="text-center">Error</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td class="table-nobg"><input type="checkbox" value=""></td>
+            <td class="table-nobg">
+              <select class="form-control input-sm" name="" id="">
+                <option value="-1">Select</option>
+                <option value="">Option 1</option>
+                <option value="">Option 2</option>
+                <option value="">Option 3</option>
+              </select>
+            </td>
+            <td>10641965</td>
+            <td>North Central</td>
+            <td>CallCenterConnect</td>
+            <td>Running</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+          </tr>
+          <tr>
+            <td class="table-nobg"><input type="checkbox" value=""></td>
+            <td class="table-nobg">
+              <select class="form-control input-sm" name="" id="">
+                <option value="-1">Select</option>
+                <option value="">Option 1</option>
+                <option value="">Option 2</option>
+                <option value="">Option 3</option>
+              </select>
+            </td>
+            <td>10641965</td>
+            <td>North Central</td>
+            <td>CallCenterConnect</td>
+            <td>Running</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+            <td class="text-center">100</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div><!-- /.widgets-mycampaigns -->
+  </div>
+
+</div><!-- /.dashboard-widgets -->

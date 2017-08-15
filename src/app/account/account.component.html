@@ -1,0 +1,153 @@
+<div class="container floater-holder">
+  <div class="row">
+
+    <div id="account-widget" class="floating-widget">
+      <h2 class="widget-title">Account</h2>
+      <p>Balance: $30.00</p>
+      <p>
+        <a href="#">(3) Inbox</a><br>
+        <a href="#">Add Funds</a><br>
+        <a href="#">Support</a><br>
+        <a href="#">Logout</a>
+      </p>
+    </div>
+    <div class="col-xs-12 heading">
+      <!-- alert message -->
+      <!-- <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <strong>Well done!</strong> You successfully read this important alert message.
+      </div> -->
+      <h1 class="text-uppercase">Account</h1>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+    </div>
+    <div class="col-xs-12 col-sm-6 widget widget-editaccounts">
+      <h2 class="text-uppercase">Edit Account</h2>
+      <form class="form-horizontal" role="form" action="03_dashboard.html">
+        <div class="form-group">
+          <label for="inputFirstName" class="col-md-4 control-label text-lg">First Name</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control input-lg" id="inputFirstName" value="Matt">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputLastName" class="col-md-4 control-label text-lg">Last Name</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control input-lg" id="inputLastName" value="Erich">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputCompanyName" class="col-md-4 control-label text-lg">Company Name</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control input-lg" id="inputCompanyName" value="CallMyList">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail" class="col-md-4 control-label text-lg">Email</label>
+          <div class="col-md-8">
+            <input type="email" class="form-control input-lg" id="inputEmail" value="merich@callmylist.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPhone" class="col-md-4 control-label text-lg">Phone Number</label>
+          <div class="col-md-8">
+            <input type="telephone" class="form-control input-lg" id="inputPhone" value="(555) 555-5555">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-md-4 control-label text-lg">Password</label>
+          <div class="col-md-8">
+            <input type="password" class="form-control input-lg" id="inputPassword" value="password">
+          </div>
+        </div>
+        <div class="form-group action-btns">
+          <div class="col-xs-12 text-right">
+            <button type="reset" class="btn btn-primary btn-lg">Reset Password</button>
+            <button type="submit" class="btn btn-primary btn-lg">Update</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 widget widget-currentfunds">
+      <div class="row">
+        <div class="col-md-9 col-md-push-1">
+          <h2 class="text-uppercase">Current Funds</h2>
+          <p><button type="button" class="btn btn-primary btn-lg pull-right">Add Funds</button></p>
+          <p class="text-lg">Funds Available: <strong class="text-primary">$920.25</strong></p>
+
+          <p class="text-lg">Estimated Calls Left: <strong class="text-primary">10,250</strong></p>
+          <p>&nbsp;</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 widget widget-notifications">
+      <div class="row">
+        <div class="col-md-9 col-md-push-1">
+          <h2 class="text-uppercase">Notifications</h2>
+          <div class="table-responsive">
+            <table class="table table-condensed table-hover table-striped">
+              <thead>
+              <tr>
+                <th class="table-nobg" width="1%"></th>
+                <th class="table-nobg" width="1%"></th>
+                <th>Subject</th>
+                <th>ID</th>
+                <th>Date</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="table-nobg"><span class="glyphicon glyphicon-dot text-primary" title="New"></span></td>
+                <td class="table-nobg"><input type="checkbox" value=""></td>
+                <td>Contact List Issues</td>
+                <td>14647865</td>
+                <td>6-5-2014</td>
+              </tr>
+              <tr>
+                <td class="table-nobg"></td>
+                <td class="table-nobg"><input type="checkbox" value=""></td>
+                <td>Low Funds Alert</td>
+                <td>14647864</td>
+                <td>6-4-2014</td>
+              </tr>
+              <tr>
+                <td class="table-nobg"></td>
+                <td class="table-nobg"><input type="checkbox" value=""></td>
+                <td>Contact List Issues</td>
+                <td>14647863</td>
+                <td>6-3-2014</td>
+              </tr>
+              <tr>
+                <td class="table-nobg"></td>
+                <td class="table-nobg"><input type="checkbox" value=""></td>
+                <td>Contact List Issues</td>
+                <td>14647862</td>
+                <td>6-1-2014</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <form action="" role="form" class="form-inline">
+            <!-- <div class="row"> -->
+            <!-- <div class="col-xs-6"> -->
+            <select class="form-control" name="selectcampaign" id="selectcampaign">
+              <option value="-1">Please select an option</option>
+              <option value="">Option 1</option>
+              <option value="">Option 2</option>
+              <option value="">Option 3</option>
+            </select>
+            <!-- </div> -->
+            <!-- <div class="col-xs-3"> -->
+            <!-- <button class="btn btn-primary" type="button">Go</button> -->
+            <!-- </div> -->
+            <!-- </div> -->
+          </form>
+        </div>
+      </div>
+
+
+    </div><!-- /.widget-mysounds -->
+  </div>
+</div><!-- /.dashboard-widgets -->

@@ -1,0 +1,33 @@
+<div id="wrapper" class="main-wrapper page-wrapper">
+  <div class="view-container">
+    <div class="view-frame">
+      <section class=" bg-primary">
+        <div class="container">
+          <div class="row align-items-center error-section">
+            <div class="col-lg-12">
+              <h2 class="display-1 text-center">
+                <span> {{errorCode}} </span>
+              </h2>
+            </div>
+            <div class="col-lg-12">
+              <h4 class=" text-center text-light">
+                <span ng-bind-html=message></span>
+                {{errorMessage}}
+              </h4>
+              <!-- <hr> -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="">
+        <div class="container">
+          <div class="row">
+            <div class="col text-center">
+              <a class="btn btn-info my-4 btn-lg" [routerLink]="['/login']">Back</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

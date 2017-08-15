@@ -1,0 +1,47 @@
+<div class="container pie-charts">
+  <div class="row">
+    <div class="col-xs-12 heading form-inline">
+      <h1 class="text-uppercase">Recent Campaigns</h1>
+      <!-- <div class="row"> -->
+      <!-- <div class="col-xs-4"> -->
+      <select class="form-control" name="selectcampaign" id="selectcampaign">
+        <option value="-1">Select Campaign</option>
+        <option value="">Option 1</option>
+        <option value="">Option 2</option>
+        <option value="">Option 3</option>
+      </select>
+      <!-- </div> -->
+      <!-- </div> -->
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 svg-container">
+          <cml-donut-chart [charId]="'chart_listening_duration'" [title]="'Listening Duration'" [data]="data" [labels]="labels" [colors]="colors" [height]="400"></cml-donut-chart>
+      </div>
+      <div class="col-xs-12 col-sm-6 svg-container">
+        <div class="hidden-xs" style="height:80px;"></div>
+          <cml-donut-chart [charId]="'chart_detail'" [title]="'Detail'" [data]="data" [labels]="labels" [colors]="colors" ></cml-donut-chart>
+      </div>
+    </div>
+  </div>
+</div><!-- /.pie-charts -->
+
+<div class="container dashboard-widgets">
+  <div class="row">
+    <div class="col-sm-6 widget widget-myaccount">
+      <cml-my-account></cml-my-account>
+    </div>
+    <div class="col-sm-6 widget widget-mycampaigns">
+      <cml-my-campaign></cml-my-campaign>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6 widget widget-mycontactlist">
+      <cml-my-contact-list></cml-my-contact-list>
+    </div>
+    <div class="col-sm-6 widget widget-mysounds">
+      <cml-my-sound></cml-my-sound>
+    </div>
+  </div>
+</div><!-- /.dashboard-widgets -->
+
+<cml-footer ></cml-footer>

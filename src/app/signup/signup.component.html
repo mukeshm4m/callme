@@ -1,0 +1,76 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="#">
+        <img alt="CallMyList" src="../../assets/images/logo-callmylist.png">
+      </a>
+    </div><!-- /.navbar-header -->
+
+  </div>
+</nav><!-- /.navbar -->
+
+<div class="container form-fields">
+  <div class="row">
+    <div class="col-xs-12 heading">
+      <h1 class="text-uppercase">Create An Account<br><small class="text-uppercase">to get started</small></h1>
+    </div>
+    <div class="col-xs-6">
+      <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="onSignup()" >
+        <div class="form-group">
+          <label for="inputFirstName" class="col-md-4 control-label text-lg">First Name</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control input-lg" id="inputFirstName" formControlName="first name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputLastName" class="col-md-4 control-label text-lg">Last Name</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control input-lg" id="inputLastName" formControlName="last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputCompanyName" class="col-md-4 control-label text-lg">Company Name</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control input-lg" id="inputCompanyName" formControlName="company name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail" class="col-md-4 control-label text-lg">Email</label>
+          <div class="col-md-8">
+            <input type="email" class="form-control input-lg" id="inputEmail" formControlName="email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPhone" class="col-md-4 control-label text-lg">Phone Number</label>
+          <div class="col-md-8">
+            <input type="telephone" class="form-control input-lg" id="inputPhone" formControlName="phone">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword" class="col-md-4 control-label text-lg">Password</label>
+          <div class="col-md-8">
+            <input type="password" class="form-control input-lg" id="inputPassword" formControlName="password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputConfirmPass" class="col-md-4 control-label text-lg">Confirm Password</label>
+          <div class="col-md-8">
+            <input type="password" class="form-control input-lg" id="inputConfirmPass" formControlName="confirm password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-8 col-md-offset-4 text-right">
+            <button type="submit" class="btn btn-primary btn-lg" >Sign Up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-xs-6">
+      <p class="text-uppercase"><span class="text-lg"><strong>It’s Simple.</strong></span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a libero lorem. Sed et pharetra massa. Etiam vel purus tellus. Sed mattis rhoncus magna in convallis. Phasellus dictum scelerisque sollicitudin. Aliquam imperdiet quam pulvinar quam euismod, nec rutrum sem ornare. Ut aliquam justo leo, ut rutrum ante luctus eget. Donec ullamcorper eget dolor at dignissim. Etiam auctor augue ut dapibus vulputate.</p>
+      <p class="text-uppercase">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a libero lorem. Sed et pharetra massa. Etiam vel purus tellus. Sed mattis rhoncus magna in convallis. Phasellus dictum scelerisque sollicitudin. Aliquam imperdiet quam pulvinar quam euismod, nec rutrum sem ornare. Ut aliquam justo leo, ut rutrum ante luctus eget. Donec ullamcorper eget dolor at dignissim. Etiam auctor augue ut dapibus vulputate.</p>
+    </div>
+  </div>
+</div>
+
+<cml-footer showContent="true"></cml-footer>

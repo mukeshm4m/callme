@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <h5 class="modal-title">Session Timeout</h5>
+</div>
+<div class="modal-body">
+  <p>Your session is about to expire, you will be logged out. Do you want to stay signed in?</p>
+  <ngb-progressbar animated=true type="success" value="{{seconds}}" max="60">{{seconds}} seconds left</ngb-progressbar>
+</div>
+<div class="modal-footer">
+  <input class="btn btn-primary" id="btnYes" value="Yes" type="button" (click)="refreshSession()"/>
+  <input class="btn info" type="button" id="btnNo" value="No" (click)="expireSession()"/>
+</div>
