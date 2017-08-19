@@ -1,9 +1,8 @@
----
 engines:
   tslint:
     enabled: true
     channel: beta
-    config: tslint.json
+    config: "./tslint.json"
   csslint:
     enabled: false
   duplication:
