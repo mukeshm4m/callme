@@ -8,7 +8,7 @@ import * as moment from "moment";
 export class DatexPipe implements PipeTransform {
   transform(value: any, format: string = ""): string {
     // Try and parse the passed value.
-    let momentDate = moment(value);
+    const momentDate = moment(value);
 
     // If moment didn't understand the value, return it unformatted.
     if (!momentDate.isValid()) {
