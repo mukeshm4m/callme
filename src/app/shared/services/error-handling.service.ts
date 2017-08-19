@@ -7,7 +7,7 @@ export class ErrorHandlingService implements ErrorHandler {
   loginUserGuid: string = null;
 
   handleError(error) {
-    let errorObj = {
+    const errorObj = {
       errorUrl: window.location.href,
       errorMessage: error.message,
       sessionVaraibles: this.loginUserGuid,
@@ -20,7 +20,7 @@ export class ErrorHandlingService implements ErrorHandler {
   }
 
   constructor(private commonService: CommonService) {
-    let loginUser = JSON.parse(localStorage.getItem(constants.localStorageUserLoginKey));
+    const loginUser = JSON.parse(localStorage.getItem(constants.localStorageUserLoginKey));
     this.loginUserGuid = loginUser ? loginUser.id : null;
   }
 

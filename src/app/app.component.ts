@@ -28,19 +28,13 @@ export class AppComponent implements OnInit {
     this.translate.addLangs(["en"]);
     this.translate.setDefaultLang('en');
     
-    /* let langObj = AppGlobal.getLanguage();
-    if (AppUtils.isUndefinedOrNull(langObj)) {
-      AppGlobal.setLanguage('en');
-    } else {
-      this.translate.use(langObj.language);
-      $('body').attr('dir', langObj.direction);
-    } */
-    
     this.router.events
       .filter(event => event instanceof NavigationEnd)
       .map(() => this.activatedRoute)
       .map(route => {
-        while (route.firstChild) route = route.firstChild;
+        while (route.firstChild) {
+          route = route.firstChild;
+        }
         return route;
       })
       .filter(route => route.outlet === 'primary')

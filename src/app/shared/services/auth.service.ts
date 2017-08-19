@@ -18,49 +18,6 @@ export class AuthService {
   }
   
   /********************
-   * HTTP OPERATIONS ***
-   *********************/
-  login(data: any): Observable<any> {
-    return this.http.post(constants.apiUrl.login, JSON.stringify(data))
-      .map((response: Response) => {
-  
-        this.addLoginUserInLocalStorage(response);
-        return response.json() && response.json();
-      })
-      .catch((error: any) => {
-        return Observable.throw(error.json());
-      })
-  }
-  
-  private addLoginUserInLocalStorage(response: Response) {
-    let headers = response.headers;
-    let token = headers.get(constants.apiRequestHeaderKeys.authToken);
-    this.loginUser = this.buildLoginUser(token);
-  
-    localStorage.setItem(constants.localStorageUserLoginKey, JSON.stringify(this.loginUser));
-  }
-  
-  updateToken() {
-    return this.http.get(constants.apiUrl.refreshToken)
-      .map((response: Response) => {
-        return response.json() && response.json();
-      })
-      .catch((error: any) => {
-        return Observable.throw(error.json());
-      })
-  }
-  
-  forgotPassword(data: any): Observable<any> {
-    return this.http.post(constants.apiUrl.forgotPassword, JSON.stringify(data))
-      .map((response: Response) => {
-        return response.json() && response.json();
-      })
-      .catch((error: any) => {
-        return Observable.throw(error.json());
-      })
-  }
-  
-  /********************
    * STATIC ACCESS *****
    *********************/
   public static logout(): boolean {
@@ -73,10 +30,10 @@ export class AuthService {
   
   public static isAuthenticated(): boolean {
     
-    let loginUser = AuthService.getLoginUser();
+    const loginUser = AuthService.getLoginUser();
     if (loginUser) {
-      let jwtHelper = new JwtHelper();
-      let token = loginUser.token;
+      const jwtHelper = new JwtHelper();
+      const token = loginUser.token;
       if (jwtHelper.isTokenExpired(token)) {
         AuthService.logout();
         return false;
@@ -88,11 +45,11 @@ export class AuthService {
   }
   
   public static getTokenExpiry(): number {
-    let loginUser = AuthService.getLoginUser();
+    const loginUser = AuthService.getLoginUser();
     let date: number;
     if (loginUser) {
-      let jwtHelper = new JwtHelper();
-      let token = loginUser.token;
+      const jwtHelper = new JwtHelper();
+      const token = loginUser.token;
       date = jwtHelper.getTokenExpirationDate(token).valueOf();
       return date;
     }
@@ -111,7 +68,7 @@ export class AuthService {
   
   public static getUserId(): number {
     
-    let loginUser = AuthService.getLoginUser();
+    const loginUser = AuthService.getLoginUser();
     if (AuthService.isAuthenticated()) {
       return loginUser.id;
     }
@@ -121,7 +78,7 @@ export class AuthService {
   
   public static getLoginUserName(): string {
     
-    let loginUser = AuthService.getLoginUser();
+    const loginUser = AuthService.getLoginUser();
     if (AuthService.isAuthenticated()) {
       return loginUser.name;
     }
@@ -131,7 +88,7 @@ export class AuthService {
   
   public static isLoginFromGoogle(): boolean {
     
-    let loginUser = AuthService.getLoginUser();
+    const loginUser = AuthService.getLoginUser();
     if (AuthService.isAuthenticated()) {
       return loginUser.googleLogin;
     }
@@ -155,15 +112,15 @@ export class AuthService {
    * HELPER FUNCTIONS ********
    **************************/
   private static getLoginUser() {
-    let storedLoginUser = JSON.parse(localStorage.getItem(constants.localStorageUserLoginKey));
+    const storedLoginUser = JSON.parse(localStorage.getItem(constants.localStorageUserLoginKey));
     return storedLoginUser ? storedLoginUser : null;
   }
   
   private buildLoginUser(token: any): LoginUser {
-    let decodedToken: any = this.jwtHelper.decodeToken(token);
-    
-    let loginInfo = decodedToken.login;
-    let loginUser = new LoginUser(
+    const decodedToken: any = this.jwtHelper.decodeToken(token);
+  
+    const loginInfo = decodedToken.login;
+    const loginUser = new LoginUser(
       loginInfo.id,
       decodedToken.version,
       loginInfo.name,
@@ -175,5 +132,45 @@ export class AuthService {
       loginInfo.permissions);
     
     return loginUser;
+  }
+  
+  login(data: any): Observable<any> {
+    return this.http.post(constants.apiUrl.login, JSON.stringify(data))
+      .map((response: Response) => {
+        
+        this.addLoginUserInLocalStorage(response);
+        return response.json() && response.json();
+      })
+      .catch((error: any) => {
+        return Observable.throw(error.json());
+      })
+  }
+  
+  private addLoginUserInLocalStorage(response: Response) {
+    const headers = response.headers;
+    const token = headers.get(constants.apiRequestHeaderKeys.authToken);
+    this.loginUser = this.buildLoginUser(token);
+    
+    localStorage.setItem(constants.localStorageUserLoginKey, JSON.stringify(this.loginUser));
+  }
+  
+  updateToken() {
+    return this.http.get(constants.apiUrl.refreshToken)
+      .map((response: Response) => {
+        return response.json() && response.json();
+      })
+      .catch((error: any) => {
+        return Observable.throw(error.json());
+      })
+  }
+  
+  forgotPassword(data: any): Observable<any> {
+    return this.http.post(constants.apiUrl.forgotPassword, JSON.stringify(data))
+      .map((response: Response) => {
+        return response.json() && response.json();
+      })
+      .catch((error: any) => {
+        return Observable.throw(error.json());
+      })
   }
 }

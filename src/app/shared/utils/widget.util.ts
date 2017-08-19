@@ -7,8 +7,8 @@ export class WidgetUtil {
 
   public static showSessionTimeoutDialog(ngbModal: NgbModal) {
 
-    let ngbModalRef = ngbModal.open(SessiontimeoutComponent, WidgetUtil.options);
-    let componentInstance = ngbModalRef.componentInstance;
+    const ngbModalRef = ngbModal.open(SessiontimeoutComponent, WidgetUtil.options);
+    const componentInstance = ngbModalRef.componentInstance;
 
     componentInstance.modalRef = ngbModalRef;
     return componentInstance;

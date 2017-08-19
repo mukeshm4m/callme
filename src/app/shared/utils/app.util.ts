@@ -7,7 +7,7 @@ import {constants} from "../../app.constants";
 export class AppUtils {
 
   public static isBusinessLogicError(response): boolean {
-    if (!AppUtils.isUndefinedOrNull(response) && response.statusCode == constants.errorCodes.businessRuleFailure) {
+    if (!AppUtils.isUndefinedOrNull(response) && response.statusCode === constants.errorCodes.businessRuleFailure) {
       return true;
     }
     return false;
@@ -27,7 +27,7 @@ export class AppUtils {
 
   public static markAsDirty(group: FormGroup) {
     group.markAsDirty()
-    for (let i in group.controls) {
+    for (const i in group.controls) {
       if (group.controls[i] instanceof FormControl) {
         group.controls[i].markAsDirty();
       } else if (group.controls[i] instanceof FormGroup) {
@@ -56,13 +56,13 @@ export class AppUtils {
   }
 
   public static enableForm(group: FormGroup) {
-    for (let i in group.controls) {
+    for (const i in group.controls) {
       group.controls[i].enable();
     }
   }
 
   public static disableForm(group: FormGroup) {
-    for (let i in group.controls) {
+    for (const i in group.controls) {
       group.controls[i].disable();
     }
   }

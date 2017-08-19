@@ -54,8 +54,8 @@ export class InterceptedHttp extends Http {
       options.headers = new Headers();
     }
 
-    let headerKeys = constants.apiRequestHeaderKeys;
-    let headers = constants.apiRequestHeaders.default;
+    const headerKeys = constants.apiRequestHeaderKeys;
+    const headers = constants.apiRequestHeaders.default;
     options.headers.append(headerKeys.contentType, headers.contentType);
     options.headers.append(headerKeys.source, headers.source);
     options.headers.append(headerKeys.requestCode, headers.requestCode);
@@ -65,7 +65,7 @@ export class InterceptedHttp extends Http {
     options.headers.append(headerKeys.pragma, headers.pragma);
 
     if (AuthService.isAuthenticated()) {
-      let token = AuthService.getToken();
+      const token = AuthService.getToken();
       options.headers.append(headerKeys.authorization, token);
       options.headers.append(headerKeys.xAuthorization, token);
     }
@@ -80,7 +80,7 @@ export class InterceptedHttp extends Http {
   private updateUrl(req: string) {
 
     // loading i18n files
-    if (req.indexOf("i18n") != -1) {
+    if (req.indexOf("i18n") !== -1) {
       return req;
     }
 
@@ -98,14 +98,14 @@ export class InterceptedHttp extends Http {
   }
 
   private onSuccess(response: Response): void {
-    let token = response.headers.get('x_auth_token') !== null ? response.headers.get('x_auth_token') : response.headers.get('X_AUTH_TOKEN');
+    const token = response.headers.get('x_auth_token') !== null ? response.headers.get('x_auth_token') : response.headers.get('X_AUTH_TOKEN');
     AuthService.updateToken(token);
   }
 
   private onError(error: any): void {
     if (error.status === 400) {
-      let body = error.json();
-      if (body.statusCode != 1004) {
+      const body = error.json();
+      if (body.statusCode !== 1004) {
         EmitterUtil.get(constants.events.navigation).emit(['/error', body.statusCode]);
       }
     }

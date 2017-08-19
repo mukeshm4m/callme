@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
               state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
     if (AuthService.isAuthenticated()) {
-      if (state.url == constants.pageUrl.login) {
+      if (state.url === constants.pageUrl.login) {
         this.router.navigate([constants.pageUrl.home]);
       } else {
         this.sessionTimeoutService.onPageChange();
@@ -26,7 +26,7 @@ export class AuthGuard implements CanActivate {
       }
     }
 
-    if (state.url == constants.pageUrl.login) {
+    if (state.url === constants.pageUrl.login) {
       return true;
     } else {
       this.router.navigate([constants.pageUrl.login]);

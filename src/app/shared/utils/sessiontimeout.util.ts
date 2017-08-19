@@ -22,7 +22,7 @@ export class SessiontimeoutUtil {
   }
 
   startLogoutTimer(tick: number) {
-    if (tick == 1) {
+    if (tick === 1) {
       this.unsubscribeTimer();
       if (AuthService.isAuthenticated()) {
         this.timerService.newTimer('logoutTime', constants.sessionTimeout.tickTime);
@@ -39,7 +39,7 @@ export class SessiontimeoutUtil {
   }
 
   public timerTickCallBack = (val: any): void => {
-    let diff: number = AuthService.getTokenExpiry() - new Date().valueOf();
+    const diff: number = AuthService.getTokenExpiry() - new Date().valueOf();
     if (diff < 0) {
       this.timerService.unsubscribe(this.subscriptionId);
       if (AuthService.isAuthenticated()) {

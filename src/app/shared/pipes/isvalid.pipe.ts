@@ -6,10 +6,9 @@ import {Pipe, PipeTransform} from "@angular/core";
 })
 export class IsvalidPipe implements PipeTransform {
 
-  //TODO: refactor this to accept array of arguments
   transform(control: any, validations?: string []): boolean {
 
-    var validationFlag: boolean = false;
+    let validationFlag = false;
     validations.forEach((validation, index) => {
       if (control) {
         if (control.hasError(validation) && control.dirty) {
@@ -21,5 +20,4 @@ export class IsvalidPipe implements PipeTransform {
 
     return validationFlag;
   }
-
 }

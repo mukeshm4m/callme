@@ -5,7 +5,7 @@ export class ValidatorUtil {
 
   public static emailValidator(control: FormControl): { [key: string]: any } {
 
-    var emailRegexp = /^['_A-Za-z0-9-\+]+(\.['_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/i;
+    const emailRegexp = /^['_A-Za-z0-9-\+]+(\.['_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$/i;
 
     if (control.value && !emailRegexp.test(control.value)) {
       return {invalidEmail: true};
@@ -14,7 +14,7 @@ export class ValidatorUtil {
 
   public static grNameCheck(control: FormControl): { [key: string]: any } {
 
-    if (control.value != '' && control.value != null) {
+    if (control.value !== '' && control.value != null) {
 
       if (!(new RegExp("^[a-zA-Z]", "i")).test(control.value)) {
         return {invalidGrName: true};
@@ -58,7 +58,7 @@ export class ValidatorUtil {
 
   public static validateName(control: FormControl): { [key: string]: any } {
 
-    let value = control.value;
+    const value = control.value;
     if (!AppUtils.isUndefinedOrNull(value)) {
       if (!(new RegExp("^[a-zA-Z]", "i")).test(value)) {
         return {"nameCheck": true};

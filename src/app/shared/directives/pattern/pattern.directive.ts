@@ -11,7 +11,7 @@ export class PatternDirective {
 
   @Input('cml-pattern')
   public set defineInputType(pattern: string) {
-    let ph = this.el.nativeElement.placeholder;
+    const ph = this.el.nativeElement.placeholder;
     Inputmask({regex: pattern, placeholder: ph}).mask(this.el.nativeElement);
   }
 }
