@@ -96,7 +96,7 @@ export class AuthService {
     
     if (token !== null) {
       if (AuthService.isAuthenticated()) {
-        let loginUser = AuthService.getLoginUser();
+        const loginUser = AuthService.getLoginUser();
         loginUser.token = token;
         localStorage.setItem(constants.localStorageUserLoginKey, JSON.stringify(loginUser));
         return AuthService.getLoginUser().token;

@@ -15,7 +15,7 @@ engines:
       - python
       - php
   eslint:
-    enabled: true
+    enabled: false
   fixme:
     enabled: true
 ratings:
@@ -35,3 +35,4 @@ exclude_paths:
   - node_modules/**
   - bower_components/**
   - tmp/**
+  - assets/**
