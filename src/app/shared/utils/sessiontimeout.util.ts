@@ -50,5 +50,5 @@ export class SessiontimeoutUtil {
     else if (diff <= constants.sessionTimeout.showComponentBeforeTime && !SessiontimeoutComponent.isShowing) {
       WidgetUtil.showSessionTimeoutDialog(this.modalService);
     }
-  };
+  }
 }

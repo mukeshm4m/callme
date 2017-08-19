@@ -20,7 +20,7 @@ export class InterceptedHttp extends Http {
     return super.request(url, options)
       .catch(this.onCatch)
       .do((res: Response) => {
-        this.onSuccess(res)
+        this.onSuccess(res);
       }, (error: any) => {
         this.onError(error);
       });

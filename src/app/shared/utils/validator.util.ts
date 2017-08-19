@@ -50,10 +50,10 @@ export class ValidatorUtil {
       if (ctrl.value !== "" && toCtrl.value !== ctrl.value) {
         return {
           matchWith: true
-        }
+        };
       }
       return null;
-    }
+    };
   }
 
   public static validateName(control: FormControl): { [key: string]: any } {

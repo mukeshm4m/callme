@@ -26,7 +26,7 @@ export class AppUtils {
   }
 
   public static markAsDirty(group: FormGroup) {
-    group.markAsDirty()
+    group.markAsDirty();
     for (const i in group.controls) {
       if (group.controls[i] instanceof FormControl) {
         group.controls[i].markAsDirty();

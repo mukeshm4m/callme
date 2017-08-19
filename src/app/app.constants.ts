@@ -90,4 +90,4 @@ export const constants = {
     position: "bottom",
   }
 }
-}
+};

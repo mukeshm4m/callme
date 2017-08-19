@@ -1,15 +1,14 @@
 {
-  //"extends": "tslint:latest",
   "rules": {
     "indent": [false, "spaces"],
     "quotemark": [false, "single"],
     "object-literal-sort-keys": false,
     "trailing-comma": false,
     "class-name": true,
-    "semicolon": [true, "always"],
+    "semicolon": [false, "always"],
     "triple-equals": [true, "allow-null-check"],
     "eofline": false,
-    "jsdoc-format": true,
+    "jsdoc-format": false,
     "member-access": false,
     "no-console": false,
     "whitespace": [false,

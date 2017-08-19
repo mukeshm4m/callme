@@ -49,7 +49,7 @@ export class DonutChartComponent implements OnInit {
     
     if(this.height > 0) {
       setTimeout(() => {
-        chart.resize({height: this.height})
+        chart.resize({height: this.height});
       }, 10);
     }
     

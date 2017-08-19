@@ -143,7 +143,7 @@ export class AuthService {
       })
       .catch((error: any) => {
         return Observable.throw(error.json());
-      })
+      });
   }
   
   private addLoginUserInLocalStorage(response: Response) {
@@ -171,6 +171,6 @@ export class AuthService {
       })
       .catch((error: any) => {
         return Observable.throw(error.json());
-      })
+      });
   }
 }
