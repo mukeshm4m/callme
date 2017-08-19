@@ -10,8 +10,8 @@ import {constants} from "../../../../app.constants";
   templateUrl: './sessiontimeout.component.html'
 })
 export class SessiontimeoutComponent implements OnInit, OnDestroy {
+  static isShowing = false;
   seconds: number = constants.sessionTimeout.timeoutComponentShowTime;
-  static isShowing: boolean = false;
   modalRef: NgbModalRef;
   private subscriptionId: string;
 

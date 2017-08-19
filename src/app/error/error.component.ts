@@ -8,14 +8,14 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class ErrorComponent implements OnInit {
   
-  errorCode: string = '404';
-  errorMessage: string = "Sorry, your request cannot be processed at the moment. Please try again in a few hours.";
+  errorCode = "404";
+  errorMessage = "Sorry, your request cannot be processed at the moment. Please try again in a few hours.";
   
   constructor(private route: ActivatedRoute) { }
   
   ngOnInit() {
     this.route.params.subscribe(params => {
-      let id = params['id'];
+      const id = params['id'];
       
       if(id !== null) {
         this.errorCode = id;

@@ -8,8 +8,6 @@ import {constants} from "../app.constants";
 })
 export class CampaignsComponent implements OnInit {
 
-  constructor() { }
-
   data = [
     ['data1', 15],
     ['data2', 30],
@@ -30,7 +28,8 @@ export class CampaignsComponent implements OnInit {
     data3: '#67b857',
     data4: '#f66b36'
   };
-
+  
+  constructor() { }
 
   ngOnInit() {
   }
