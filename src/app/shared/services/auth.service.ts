@@ -13,10 +13,6 @@ export class AuthService {
   public loginUser: LoginUser;
   public jwtHelper: JwtHelper = new JwtHelper();
   
-  constructor(private http: Http) {
-    this.loginUser = AuthService.getLoginUser();
-  }
-  
   /********************
    * STATIC ACCESS *****
    *********************/
@@ -132,6 +128,10 @@ export class AuthService {
       loginInfo.permissions);
     
     return loginUser;
+  }
+  
+  constructor(private http: Http) {
+    this.loginUser = AuthService.getLoginUser();
   }
   
   login(data: any): Observable<any> {
