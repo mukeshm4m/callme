@@ -4,8 +4,6 @@ engines:
     channel: beta
   csslint:
     enabled: false
-  brakeman:
-    enabled: true
   duplication:
     enabled: true
     config:
