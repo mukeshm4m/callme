@@ -2,7 +2,6 @@ engines:
   tslint:
     enabled: true
     channel: beta
-    config: "./tslint.json"
   csslint:
     enabled: false
   duplication:
@@ -11,6 +10,7 @@ engines:
       languages:
       - ruby
       - javascript
+      - typescript
       - python
       - php
   eslint:
@@ -19,15 +19,11 @@ engines:
     enabled: true
 ratings:
   paths:
-  - "**.css"
-  - "**.inc"
+  - "app/**/*.ts"
+  - "src/app/**/*.ts"
   - "**.js"
   - "**.jsx"
-  - "**.module"
-  - "**.php"
-  - "**.py"
-  - "**.rb"
-exclude_paths: 
+exclude_paths:
   - config/**
   - dist/**
   - vendor/**
@@ -35,3 +31,4 @@ exclude_paths:
   - bower_components/**
   - tmp/**
   - assets/**
+  - karma.conf.js
